@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Beautiful Website</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background: #333;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #4a90e2;
+        }
+
+        .container {
+            display: flex;
+            padding: 40px;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Mobile friendly */
+        }
+
+        img {
+            width: 250px;
+            border-radius: 20%;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba (0,0,0,02);
+
+        }
+        img:hover {
+            transition: scale(1.1);
+        }
+
+        .text {
+            max-width: 400px;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #357abd;
+        }
+
+        .skills {
+            text-align: center;
+            padding: 30px;
+        }
+        .skill-box {
+    dispaly: inline-block;
+    background: #4a90e2;
+    color:white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: 0.3S;
+}
+  .skill-box:hover {
+    background: #357abd;
+  }
+   .skill-box :hover {
+    box-shadow: 0 4px 10px rgba (0,0,0,0,2);
+   }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome to My Website 👋</h1>
+        <p>I am Parneet - Future Web Developer</p>
+    </header>
+
+    <!-- About Me Section -->
+    <div class="container">
+        <img src="myphoto.jpg" alt="Parneet's Photo">
+        <div class="text">
+            <h2>About Me</h2>
+            <p>I am learning web development and building my future in IT.</p>
+            <!--INPUT BOX-->
+            <input type= "text" id="username" placeholder="Enter your name">
+            <br></br>
+
+            <button onclick="showMessage()">Contact Me</button>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="skills">
+        <h2>My Skills</h2>
+<div class="skill-box">html</div>
+    <div class="skill-box">CSS</div>
+    <div class="skill-box">JAVASCRIPT</div>
+        <div class="skill-box">REACT</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Button popup
+        function showMessage() {
+            let name= document.getElementById("username").value;
+            alert("hello"+name+ "💖");
+        }
+
+        // Initial popup
+        let name = 'Parneet';
+        let myjob = "Web Developer";
+        alert("My name is " + name + " and I am a " + myjob);
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Parneet | Future Web Developer</p>
+    </footer>
+</body>
+</html>
