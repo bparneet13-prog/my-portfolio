@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Beautiful Website</title>
-    <!-- Google Fonts -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Parneet</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
     <style>
         body {
             margin: 0;
@@ -13,16 +13,16 @@
         }
 
         header {
-            background-color: #4a90e2;
-            color: white;
             text-align: center;
             padding: 20px;
+            background-color: #4a90e2;
+            color: white;
         }
 
         nav {
-            background: #333;
-            padding: 12px;
             text-align: center;
+            background-color: #333;
+            padding: 12px;
         }
 
         nav a {
@@ -41,22 +41,23 @@
             padding: 40px;
             align-items: center;
             justify-content: space-around;
-            flex-wrap: wrap; /* Mobile friendly */
+            flex-wrap: wrap;
         }
 
-        img {
+        .container img {
             width: 250px;
-            border-radius: 20%;
+            border-radius: 50%;
             transition: 0.3s;
-            box-shadow: 0 4px 10px rgba (0,0,0,02);
-
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        img:hover {
-            transition: scale(1.1);
+
+        .container img:hover {
+            transform: scale(1.1);
         }
 
         .text {
             max-width: 400px;
+            text-align: center;
         }
 
         button {
@@ -67,103 +68,139 @@
             border-radius: 10px;
             font-size: 16px;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         button:hover {
             background-color: #357abd;
+            transform: scale(1.05);
         }
 
         .skills {
             text-align: center;
             padding: 30px;
         }
+
         .skill-box {
-    dispaly: inline-block;
-    background: #4a90e2;
-    color:white;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 20px;
-    font-weight: 600;
-    transition: 0.3S;
-}
-  .skill-box:hover {
-    background: #357abd;
-  }
-   .skill-box :hover {
-    box-shadow: 0 4px 10px rgba (0,0,0,0,2);
-   }
+            display: inline-block;
+            background: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .skill-box:hover {
+            background: #357abd;
+            transform: scale(1.1);
+        }
+
+        /* Contact Form */
+        .contact {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .contact input, .contact textarea {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .contact button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #357abd;
+            transform: scale(1.05);
+        }
+
         footer {
-            background: #333;
+            background-color: #333;
             color: white;
             text-align: center;
             padding: 15px;
         }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .container img {
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
-
 <body>
-    <!-- Navigation -->
+
     <nav>
         <a href="#">Home</a>
         <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#contact-section">Contact</a>
     </nav>
 
-    <!-- Header -->
     <header>
         <h1>Welcome to My Website 👋</h1>
         <p>I am Parneet - Future Web Developer</p>
     </header>
 
-    <!-- About Me Section -->
     <div class="container">
-        <img src="myphoto.jpg" alt="Parneet's Photo">
+        <img src="myphoto.jpg" alt="Parneet Photo">
         <div class="text">
             <h2>About Me</h2>
             <p>I am learning web development and building my future in IT.</p>
-            <!--INPUT BOX-->
-            <input type= "text" id="username" placeholder="Enter your name">
-            <br></br>
-
+            <input type="text" id="username" placeholder="Enter your name">
             <button onclick="showMessage()">Contact Me</button>
         </div>
     </div>
-<div class="contact">
-        <h2>contact me</h2>
-        <form action="://https://formspree.io/f/mojpaprw"method="pos"></form>
-            <input typpe="text" name="name" placeholder="your name" required></input>
-    <input typpe="email" name="name" placeholder="your email" required></input>
-  <textarea name+="message" placeholder=" your message"required></textarea>
-  <button type="submit">send message</button>
-</form>
-</div>
-    <!-- Skills Section -->
+
     <div class="skills">
         <h2>My Skills</h2>
-<div class="skill-box">html</div>
-    <div class="skill-box">CSS</div>
-    <div class="skill-box">JAVASCRIPT</div>
-        <div class="skill-box">REACT</div>
+        <div class="skill-box">HTML</div>
+        <div class="skill-box">CSS</div>
+        <div class="skill-box">JavaScript</div>
+        <div class="skill-box">React</div>
     </div>
 
-    <!-- JavaScript -->
-    <script>
-        // Button popup
-        function showMessage() {
-            let name= document.getElementById("username").value;
-            alert("hello"+name+ "💖");
-        }
+    <div class="contact" id="contact-section">
+        <h2>Contact Me</h2>
+        <form action="://https://formspree.io/f/mojpaprw" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 
-        // Initial popup
-        let name = 'Parneet';
-        let myjob = "Web Developer";
-        alert("My name is " + name + " and I am a " + myjob);
+    <footer>
+        <p>2026 Parneet | Future Web Developer</p>
+    </footer>
+
+    <script>
+        function showMessage() {
+            let nameInput = document.getElementById("username").value;
+            if(nameInput === "") {
+                alert("Please enter your name 😅");
+            } else {
+                alert("Hello " + nameInput + " 💖 Thanks for visiting my website!");
+            }
+        }
     </script>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Parneet | Future Web Developer</p>
-    </footer>
 </body>
 </html>
